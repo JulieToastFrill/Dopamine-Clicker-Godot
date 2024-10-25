@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2ein6cr1y8jl"]
+
+[ext_resource type="Script" path="res://Dopamine.cs" id="1_3ke5k"]
+[ext_resource type="PackedScene" uid="uid://b3jlp8mll0gln" path="res://Download-files-for-3DPX-002452/681-bas-color-print_NIH3D.glb" id="1_e3bov"]
+[ext_resource type="Script" path="res://Dopemodel.cs" id="2_l4cdv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gki3e"]
+shading_mode = 0
+
+[node name="dopamine" type="Node3D"]
+transform = Transform3D(0.659774, 1.12338e-07, -0.0172769, -1.15398e-07, 0.66, -1.15398e-07, 0.0172769, 1.18379e-07, 0.659774, 0, 0, 0)
+script = ExtResource("1_3ke5k")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.333914, -1.40546, 0.457021, 0.998604, 0.559965, 0.992428, -1.08948, 0.0824982, 1.04972, 1.13479, 1.70489, 0.919068)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1.51515, 3.9968e-15, 2.98023e-08, -3.9968e-15, 1.51515, 2.84217e-14, -2.98023e-08, -2.84217e-14, 1.51515, 0.0247765, 0.342, 3.86717)
+keep_aspect = 0
+fov = 50.625
+size = 2.0
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1.51515, 8.86402e-13, 5.21541e-08, 1.27054e-12, 1.51517, 5.68434e-13, -5.21541e-08, 3.41061e-13, 1.51515, 0.630705, 0.342, -1.05181)
+size = Vector3(7.67981, 3.39, 0.175)
+material = SubResource("StandardMaterial3D_gki3e")
+
+[node name="dopemodel" type="Node3D" parent="."]
+script = ExtResource("2_l4cdv")
+metadata/_edit_group_ = true
+
+[node name="681-bas-color-print_NIH3D" parent="dopemodel" instance=ExtResource("1_e3bov")]
+transform = Transform3D(0.19, 1.88738e-15, 0, -3.27516e-15, 0.19, -3.55271e-15, 0, -3.55271e-15, 0.19, 7.99361e-15, 0.444138, 7.10543e-15)
